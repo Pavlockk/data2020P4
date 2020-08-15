@@ -14,7 +14,7 @@
 	<p>Jonathan Caro, Kristian Pavlock, Mark McPherson and Nathan Leopard</p>
 
 <br>
-<H2>Project Description/Outline:</H2>
+## Project Description/Outline: 
   <p>Using the dataset [Cars196 Dataset](https://ai.stanford.edu/~jkrause/cars/car_dataset.html) we </p>
   <p>cleaned up the dataset to the best of our ability to train our machine on the 8,000 plus images</p>
   <p>found in our dataset. We then tested the other 8,000 plus images to make sure our machine was in</p>
