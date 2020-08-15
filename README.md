@@ -8,6 +8,7 @@
 
 ## Link to Dataset
 [Cars196 Dataset](https://www.google.com)
+![alt text](https://ai.stanford.edu/~jkrause/cars/car2.jpg)
 
 
 ## Team Members:
