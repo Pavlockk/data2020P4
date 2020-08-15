@@ -25,6 +25,5 @@ Using the [Cars196 Dataset](https://ai.stanford.edu/~jkrause/cars/car_dataset.ht
         <li>JavaScript D3</li>
       </ul>
 </br>
-
 ## Team Members:
 Jonathan Caro, Kristian Pavlock, Mark McPherson and Nathan Leopard
