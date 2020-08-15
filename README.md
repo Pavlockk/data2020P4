@@ -6,7 +6,7 @@
 <p>Upload an image and have the program predict the Make, Model and Year of the car in the image.</p>
 <p>Display this project on a website.</p>
 
-<H2>Link to Dataset</H2>
+## Link to Dataset
 [Cars196 Dataset](https://www.google.com)
 
 <br>
