@@ -1,1 +1,1 @@
-web: waitress-serve —port=$PORT nuncio:app
+web: gunicorn app:app index:server
