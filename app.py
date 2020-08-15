@@ -36,9 +36,9 @@ graph = tf.get_default_graph()
 
 
 def info():
-    conn = sqlite3.connect("models/crop.sqlite")
+    conn = sqlite3.connect("models/cars196.sqlite")
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM crop")
+    cursor.execute("SELECT * FROM Cars")
     rows = cursor.fetchall()
     return rows
 

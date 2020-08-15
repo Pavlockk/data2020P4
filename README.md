@@ -7,7 +7,7 @@
 <p>Display this project on a website.</p>
 
 <H2>Link to Dataset</H2>
-<p>[Cars196 Dataset](https://ai.stanford.edu/~jkrause/cars/car_dataset.html)</p>
+[Cars196 Dataset](https://ai.stanford.edu/~jkrause/cars/car_dataset.html)
 
 <br>
 <H2>Team Members:</H2>
