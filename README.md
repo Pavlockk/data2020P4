@@ -1,4 +1,4 @@
-<H1>Machine Learning Project with Cars196 Dataset</H1>
+# Machine Learning Project with Cars196 Dataset
 ![alt text](https://ai.stanford.edu/~jkrause/cars/car1.jpg) ![alt text](https://ai.stanford.edu/~jkrause/cars/car1.jpg) 
 
 
