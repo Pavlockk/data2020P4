@@ -17,7 +17,7 @@
 <br>
 <H2>Libraries Used:</H2>
 	<ul>
-        <li>TensorFlow<br>&nbsp;</br></li>
+        <li>TensorFlow</li>
         <li>Python Pandas</li>
         <li>Python MatPlotLib</li>
         <li>Python NumPy</li>
