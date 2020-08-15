@@ -12,7 +12,6 @@
 
 ## Team Members:
 Jonathan Caro, Kristian Pavlock, Mark McPherson and Nathan Leopard
->>>>>>> 16921ab6808bbc34cd8c9eb08b29439f37129438
 
 
 
