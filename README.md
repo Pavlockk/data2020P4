@@ -12,11 +12,6 @@
 ![alt text](https://ai.stanford.edu/~jkrause/cars/class_montage.jpg)
 
 
-## Team Members:
-Jonathan Caro, Kristian Pavlock, Mark McPherson and Nathan Leopard
-
-
-
 ## Project Description/Outline: 
 Using the [Cars196 Dataset](https://ai.stanford.edu/~jkrause/cars/car_dataset.html) we cleaned up the dataset to the best of our ability to train our machine on the 8,000 plus images found in our dataset. We then tested the other 8,000 plus images to make sure our machine was in working order. A picture of a car was then uploaded to see if the machine could predict the Make, Model and Year of the car. This was then hosted on a website.
 	
@@ -31,3 +26,5 @@ Using the [Cars196 Dataset](https://ai.stanford.edu/~jkrause/cars/car_dataset.ht
       </ul>
 </br>
 
+## Team Members:
+Jonathan Caro, Kristian Pavlock, Mark McPherson and Nathan Leopard
