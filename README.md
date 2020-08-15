@@ -1,4 +1,6 @@
 <H1>Machine Learning Project with Cars196 Dataset</H1>
+![alt text](https://ai.stanford.edu/~jkrause/cars/car1.jpg) ![alt text](https://ai.stanford.edu/~jkrause/cars/car1.jpg) 
+
 
 ## Objectives
 1. Clean up Cars196 Dataset.
@@ -6,7 +8,6 @@
 3. Upload an image and have the program predict the Make, Model and Year of the car in the image.
 4. Display this project on a website.
 
-## Link to Dataset
 ## [Cars196 Dataset](https://www.google.com)
 ![alt text](https://ai.stanford.edu/~jkrause/cars/class_montage.jpg)
 
