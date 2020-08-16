@@ -21,7 +21,7 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 
 # load json file before weights
-loaded_json = open("models/crop.json", "r")
+loaded_json = open("models/cars.json", "r")
 # read json architecture into variable
 loaded_json_read = loaded_json.read()
 # close file
@@ -29,8 +29,7 @@ loaded_json.close()
 # retreive model from json
 loaded_model = model_from_json(loaded_json_read)
 # load weights
-loaded_model.load_weights("models/crop_weights.h5")
-model1 = load_model("models/one-class.h5")
+loaded_model.load_weights("models/car_weights.h5")
 global graph
 graph = tf.get_default_graph()
 
@@ -41,28 +40,6 @@ def info():
     cursor.execute("SELECT * FROM Cars")
     rows = cursor.fetchall()
     return rows
-
-
-def leaf_predict(img_path):
-    # load image with target size
-    img = image.load_img(img_path, target_size=(256, 256))
-    # convert to array
-    img = image.img_to_array(img)
-    # normalize the array
-    img /= 255
-    # expand dimensions for keras convention
-    img = np.expand_dims(img, axis=0)
-
-    with graph.as_default():
-        opt = keras.optimizers.Adam(lr=0.001)
-        loaded_model.compile(optimizer=opt, loss='mse')
-        preds = model1.predict(img)
-        dist = np.linalg.norm(img - preds)
-        if dist <= 20:
-            return "leaf"
-        else:
-            return "not leaf"
-
 
 def model_predict(img_path):
     # load image with target size
@@ -98,18 +75,14 @@ def upload():
         img_path = os.path.join(
             basepath, 'uploads', secure_filename(f.filename))
         f.save(img_path)
-        leaf = leaf_predict(img_path)
-        if leaf == "leaf":
-            # Make prediction
-            preds = model_predict(img_path)
-            rows = info()
-            res = np.asarray(rows[preds])
-            value = (preds == int(res[0]))
-            if value:
-                ID, Disease, Pathogen, Symptoms, Management = [i for i in res]
-            return render_template('result.html', Pathogen=Pathogen, Symptoms=Symptoms, Management=Management, result=Disease, filee=f.filename)
-        else:
-            return render_template('index.html', Error="ERROR: UPLOADED IMAGE IS NOT A LEAF (OR) MORE LEAVES IN ONE IMAGE")
+        # Make prediction
+        preds = model_predict(img_path)
+        rows = info()
+        res = np.asarray(rows[preds])
+        value = (preds == int(res[0]))
+        if value:
+            Class, Label = [i for i in res]
+        return render_template('result.html', Class=Class, result=Label, filee=f.filename)
         # return result
     return None
 
