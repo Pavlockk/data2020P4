@@ -1,6 +1,5 @@
 <H1>Machine Learning Project with Cars196 Dataset</H1>
 
-<<<<<<< HEAD
 <H2>Objectives</H2>
 <p>Clean up Cars196 Dataset.</p>
 <p>Using TensorFlow train and test the images found in Cars196.</p>
@@ -22,20 +21,6 @@
   <p>working order. A picture of a car was then uploaded to see if the machine could predict the </p>
   <p>Make, Model and Year of the car. This was then hosted on a website.</p>
 	
-=======
-## Objectives
-1. Clean up Cars196 Dataset.
-2. Using TensorFlow train and test the images found in Cars196.
-3. Upload an image and have the program predict the Make, Model and Year of the car in the image.
-4. Display this project on a website.
-
-## Link to Dataset
-[Cars196 Dataset](https://www.google.com)
-
-
-## Team Members:
-Jonathan Caro, Kristian Pavlock, Mark McPherson and Nathan Leopard
->>>>>>> 16921ab6808bbc34cd8c9eb08b29439f37129438
 
 
 
