@@ -9,8 +9,8 @@ import time
 import sqlite3
 
 # Keras
-from keras.models import load_model, model_from_json
-from keras.preprocessing import image
+from tensorflow.keras.models import load_model, model_from_json
+from tensorflow.keras.preprocessing import image
 from keras.utils.data_utils import get_file
 from PIL import Image
 
@@ -83,7 +83,7 @@ def upload():
         res = np.asarray(rows[preds])
         value = (preds == int(res[0]))
         if value:
-            #Class, Label = [i for i in res]
+            Class, Label = [i for i in res]
             return render_template('result.html', Class=Class, result=Label, filee=f.filename)
         return result
     return None
