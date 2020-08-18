@@ -9,8 +9,8 @@ import time
 import sqlite3
 
 # Keras
-from keras.models import load_model, model_from_json
-from keras.preprocessing import image
+from tensorflow.keras.models import load_model, model_from_json
+from tensorflow.keras.preprocessing import image
 from keras.utils.data_utils import get_file
 from PIL import Image
 
