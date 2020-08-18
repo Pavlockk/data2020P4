@@ -5,6 +5,11 @@ body {
     color: #f5f6f7;
 }
 
+#myImage {
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* msie */
+}
+
 .inline {
     display: inline-block;
     margin-right: 5px;
