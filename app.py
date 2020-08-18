@@ -11,6 +11,7 @@ import sqlite3
 # Keras
 from keras.models import load_model, model_from_json
 from keras.preprocessing import image
+from keras.utils.data_utils import get_file
 from PIL import Image
 
 # Flask utils
@@ -29,9 +30,10 @@ loaded_json.close()
 # retreive model from json
 loaded_model = model_from_json(loaded_json_read)
 # load weights
-loaded_model.load_weights("models/car_weights.h5")
-global graph
-graph = tf.get_default_graph()
+weights_path = get_file(
+        'car_weights.h5',
+        'https://project3cars.s3.us-east-2.amazonaws.com/model.h5')
+loaded_model.load_weights(weights_path)
 
 
 def info():
@@ -51,10 +53,10 @@ def model_predict(img_path):
     # expand dimensions for keras convention
     img = np.expand_dims(img, axis=0)
 
-    with graph.as_default():
+    with tf.Graph().as_default() as g:
         opt = keras.optimizers.Adam(lr=0.001)
         loaded_model.compile(
-            optimizer=opt, loss='categorical_crossentropy', metrics=['accuracy'])
+            optimizer=opt, loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True), metrics=['accuracy'])
         preds = loaded_model.predict_classes(img)
         return int(preds)
 
@@ -81,9 +83,9 @@ def upload():
         res = np.asarray(rows[preds])
         value = (preds == int(res[0]))
         if value:
-            Class, Label = [i for i in res]
-        return render_template('result.html', Class=Class, result=Label, filee=f.filename)
-        # return result
+            #Class, Label = [i for i in res]
+            return render_template('result.html', Class=Class, result=Label, filee=f.filename)
+        return result
     return None
 
 @app.route('/predict/<filename>')
