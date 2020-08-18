@@ -1,7 +1,6 @@
 # Machine Learning Project with Cars196 Dataset
 ![alt text](https://ai.stanford.edu/~jkrause/cars/car4.jpg) 
 
-<<<<<<< HEAD
 <H2>Objectives</H2>
 <p>Clean up Cars196 Dataset.</p>
 <p>Using TensorFlow train and test the images found in Cars196.</p>
