@@ -10,9 +10,8 @@ Display this project on a website.
 ## Link to Dataset
 [Cars196 Dataset](https://ai.stanford.edu/~jkrause/cars/car_dataset.html)
 
-<br>
 ## Team Members:
-	Jonathan Caro, Kristian Pavlock, Mark McPherson and Nathan Leopard
+Jonathan Caro, Kristian Pavlock, Mark McPherson and Nathan Leopard
 
 
 ## Project Description/Outline:
@@ -23,7 +22,6 @@ Display this project on a website.
   Make, Model and Year of the car. This was then hosted on a website.
 	
 
-=======
 
 ## Objectives
 1. Clean up Cars196 Dataset.
