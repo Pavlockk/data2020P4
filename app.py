@@ -79,10 +79,10 @@ def upload():
             basepath, 'uploads', secure_filename(f.filename))
         f.save(img_path)
         # Make prediction
-        preds = model_predict(img_path)
+        preds = model_predict(img_path) 
         rows = info()
         res = rows[preds]
-        value = preds
+        value = preds + 1
         if value:
             Class, Label = [i for i in res]
             return render_template('result.html', Class=Class, result=Label, filee=f.filename)
