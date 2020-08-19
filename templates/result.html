@@ -24,7 +24,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html" style="font-size: xx-large;font-weight: bolder;color: black;">Home</a>
+                <a class="navbar-brand" href={{url_for('index')}} style="font-size: xx-large;font-weight: bolder;color: black;">Home</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar" style="color: black;">
 
@@ -42,10 +42,15 @@
     <br>
     <div class="container bg-3" style="color: black;text-align: justify;">
         <div class="row">
-            <div class="col-md-7" style="font-size:inherit">
+            <div class="col-md-6" style="font-size:inherit">
                 <h1 style="font-weight: 20px;"> Car Prediction </h1>
                 <p style="font-weight: 15px;">{{result}} </p>
-                <img src={{url_for('send_file', filename=filee)}} alt = "Image"></img>
+                <img src= "../static/{{Class}}.jpg" alt = "Image" height = 375 width = 550>
+            </div>
+            <div class = "col-md-6">
+                <h1 style="font-weight: 20px;">Your Car</h1>
+                <p style="font-weight: 15px; color:white">I had to I swear </p>
+                <img src={{url_for('send_file', filename=filee)}} alt = "Image" height = 375 width = 550>
             </div>
             <br>
 
