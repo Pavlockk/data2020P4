@@ -9,8 +9,8 @@ import time
 import sqlite3
 
 # Keras
-from keras.models import load_model, model_from_json
-from keras.preprocessing import image
+from tensorflow.keras.models import load_model, model_from_json
+from tensorflow.keras.preprocessing import image
 from keras.utils.data_utils import get_file
 from PIL import Image
 
@@ -39,7 +39,7 @@ loaded_model.load_weights(weights_path)
 def info():
     conn = sqlite3.connect("models/cars196.sqlite")
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM Cars")
+    cursor.execute("SELECT * FROM cars196")
     rows = cursor.fetchall()
     return rows
 
@@ -53,12 +53,13 @@ def model_predict(img_path):
     # expand dimensions for keras convention
     img = np.expand_dims(img, axis=0)
 
-    with tf.Graph().as_default() as g:
-        opt = keras.optimizers.Adam(lr=0.001)
-        loaded_model.compile(
-            optimizer=opt, loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True), metrics=['accuracy'])
-        preds = loaded_model.predict_classes(img)
-        return int(preds)
+    #with tf.Graph().as_default() as g:
+    opt = keras.optimizers.Adam(lr=0.001)
+    loaded_model.compile(
+        optimizer=opt, loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True), metrics=['accuracy'])
+    preds = loaded_model.predict(img)
+    result = np.where(preds[0] == np.amax(preds[0]))
+    return result[0][0]
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -78,14 +79,13 @@ def upload():
             basepath, 'uploads', secure_filename(f.filename))
         f.save(img_path)
         # Make prediction
-        preds = model_predict(img_path)
+        preds = model_predict(img_path) 
         rows = info()
-        res = np.asarray(rows[preds])
-        value = (preds == int(res[0]))
+        res = rows[preds]
+        value = preds + 1
         if value:
-            #Class, Label = [i for i in res]
+            Class, Label = [i for i in res]
             return render_template('result.html', Class=Class, result=Label, filee=f.filename)
-        return result
     return None
 
 @app.route('/predict/<filename>')
